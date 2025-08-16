@@ -15,7 +15,6 @@ class Commodity(Base):
     currency = Column(String, nullable=False)
     extraction_date = Column(Date, nullable=False)
     asset_name = Column(String, nullable=False)
-    category = Column(String, nullable=False)
 
     __table_args__ = (
         UniqueConstraint('asset', 'extraction_date', name='uix_asset_extraction_date'),

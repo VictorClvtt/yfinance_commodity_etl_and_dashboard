@@ -16,20 +16,12 @@ def transform_commodities_df(df: pd.DataFrame) -> pd.DataFrame:
         "ZS=F": "Soybeans",
         "KC=F": "Coffee",
         "CT=F": "Cotton",
-        "^GSPC": "S&P 500",
-        "^DJI": "Dow Jones",
-        "^IXIC": "Nasdaq"
     }
     df["asset_name"] = df["asset"].map(asset_map)
 
     # Ensure correct dtypes
     df["price"] = pd.to_numeric(df["price"], errors="coerce")
     df["extraction_date"] = pd.to_datetime(df["extraction_date"], utc=True)
-
-    # Add category column
-    df["category"] = df["asset_name"].apply(
-        lambda x: "Index" if x in ["S&P 500", "Dow Jones", "Nasdaq"] else "Commodity"
-    )
 
     # Drop NaNs
     df = df.dropna(subset=["price"])

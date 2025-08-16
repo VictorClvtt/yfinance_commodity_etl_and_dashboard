@@ -27,9 +27,6 @@ symbols = [
         "ZS=F",   # Soybeans
         "KC=F",   # Coffee
         "CT=F",   # Cotton
-        "^GSPC",  # S&P 500 Index
-        "^DJI",   # Dow Jones
-        "^IXIC"   # Nasdaq
     ]
 df = get_commodities_df(symbols)
 

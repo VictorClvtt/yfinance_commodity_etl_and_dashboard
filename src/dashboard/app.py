@@ -28,12 +28,6 @@ st.markdown("---")
 st.subheader("Preço por Ativo")
 st.bar_chart(df.set_index("asset_name")["price"])
 
-# --- Gráfico de pizza ---
-st.subheader("Distribuição por Categoria")
-fig, ax = plt.subplots()
-df['category'].value_counts().plot.pie(autopct="%1.1f%%", ax=ax)
-st.pyplot(fig)
-
 # --- Gráfico de linha (se houver várias datas) ---
 if df['extraction_date'].nunique() > 1:
     st.subheader("Evolução dos preços")

@@ -11,8 +11,8 @@ def get_commodities_df(symbols: list) -> pd.DataFrame:
         latest_df = latest_df.rename(columns={'Close': 'price'})
         latest_df['asset'] = sym
         latest_df['currency'] = 'USD'
-        latest_df['collection_time'] = datetime.now()
-        latest_df = latest_df[['asset', 'price', 'currency', 'collection_time']]
+        latest_df['extraction_date'] = datetime.now()
+        latest_df = latest_df[['asset', 'price', 'currency', 'extraction_date']]
         dfs.append(latest_df)
     return pd.concat(dfs, ignore_index=True)
 

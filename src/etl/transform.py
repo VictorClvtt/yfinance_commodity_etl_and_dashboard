@@ -24,7 +24,7 @@ def transform_commodities_df(df: pd.DataFrame) -> pd.DataFrame:
 
     # Ensure correct dtypes
     df["price"] = pd.to_numeric(df["price"], errors="coerce")
-    df["collection_time"] = pd.to_datetime(df["collection_time"], utc=True)
+    df["extraction_date"] = pd.to_datetime(df["extraction_date"], utc=True)
 
     # Add category column
     df["category"] = df["asset_name"].apply(

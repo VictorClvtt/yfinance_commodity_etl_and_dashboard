@@ -13,8 +13,8 @@ max_asset = df.loc[df['price'].idxmax()]
 
 
 st.title('📊 Commodities Dashboard')
-df
 
+df
 
 # KPIs
 col1, col2, col3 = st.columns(3)
